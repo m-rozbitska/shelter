@@ -246,3 +246,39 @@
 	line-height: 18px;
 	color: $donationText;
 }
+
+.footer {
+	background: $bgWelcome;
+}
+
+.footer__wrapper {
+	padding-top: 56px;
+	display: flex;
+	gap: 160px;
+}
+
+// .footer__element {
+// 	flex: 0 1 33.333%;
+// }
+
+.footer__title {
+	font-family: 'Georgia';
+	font-size: 35px;
+	line-height: 45.5px;
+	letter-spacing: 2.1px;
+	color: $text;
+}
+
+.footer__descr {
+	font-family: 'Georgia';
+	font-size: 20px;
+	line-height: 23px;
+	letter-spacing: 1.2px;
+	color: $menuListLinkHover;
+}
+
+.footer__info {
+	display: flex;
+	gap: 20px;
+	padding: 40px 0px 40px 0px;
+}
