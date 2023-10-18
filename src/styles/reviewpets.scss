@@ -1,0 +1,29 @@
+.header__header {
+	padding: 30px 0px 30px 0px;
+	background: $headerPetsBg;
+}
+
+.header__text-pets {
+	color: $petsHeaderText;
+}
+
+.menu__listpets {
+	display: flex;
+	align-items: center;
+	gap: 35px;
+	&-linkpets {
+		font-size: 15px;
+		line-height: 24px;
+		color: $menuListLinkPets;
+		&:hover {
+			text-decoration: underline 3px $menuListLinkHover;
+		}
+	}
+}
+
+.slider__pets {
+	padding: 60px 0px 60px 0px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+}

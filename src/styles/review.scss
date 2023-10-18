@@ -46,6 +46,10 @@
 	justify-content: space-between;
 }
 
+.header__text {
+	padding-top: 10px;
+}
+
 .header__logo {
 	cursor: pointer;
 }
@@ -54,37 +58,40 @@
 	display: flex;
 	align-items: center;
 	gap: 35px;
+	&-link {
+		font-size: 15px;
+		line-height: 24px;
+		color: $menuListLink;
+		&:hover {
+			text-decoration: underline 3px;
+			color: $menuListLinkHover;
+		}
+	}
 }
 
-.menu__list-link {
-	font-size: 15px;
-	line-height: 24px;
-	color: $menuListLink;
-}
-
-.menu__list-link:hover {
-	text-decoration: underline;
-	color: $menuListLinkHover;
-}
 
 /*Welcome*/
 
 .welcome {
 	background-color: $bgWelcome;
-	background-image: url(../images/start-screen-puppy.png);
-	background-repeat: no-repeat;
-	height: 100vh;
-	background-position: right bottom;
 }
 
 
 .welcome__inner {
 	display: flex;
+	gap: 42px;
+	@media(max-width: 768px) {
+		padding: 0px 99px 0px 100px;
+		flex-direction: column;
+	}
 }
 
 .welcome__descr {
 	margin-top: 163px;
 	flex-basis: 460px;
+	@media(max-width: 768px) {
+		margin-top: 0px;
+	}
 }
 
 
@@ -98,7 +105,18 @@
 .welcome__text {
 	line-height: 24px;
 	padding: 42px 0px 42px 0px;
+	@media(max-width: 768px) {
+		font-size: 15px;
+		line-height: 24px;
+	}
 }
+
+// @media(max-width: 768px) {
+// 	.welcome__btn {
+// 		display: flex;
+// 	}
+// }
+
 
 
 /*About*/
@@ -131,20 +149,20 @@
 	text-align: center;
 }
 
-.accordion {
+.slider {
 	padding: 60px 0px 60px 0px;
 	display: flex;
 	justify-content: space-between;
 }
 
-.accordion__item {
+.slider__item {
 	padding: 26px 0px 30px 0px;
 	max-height: 435px;
 	background: $accordionItemBg;
 	border-radius: 9px;
 }
 
-.accordion__descr {
+.slider__descr {
 	font-family: 'Georgia';
 	font-size: 20px;
 	line-height: 23px;
@@ -154,7 +172,7 @@
 	padding: 30px 0px 30px 0px;
 }
 
-.accordion__btn {
+.slider__btn {
 	margin: 0px 41px 0px 41px;
 	width: 187px;
 	height: 52px;
@@ -168,13 +186,17 @@
 	line-height: 22px;
 	border: 2px solid $accordionBtnBorder;
 	border-radius: 100px;
+	&:hover {
+		background: $btnBgHover;
+	}
 }
 
 .pets__btn {
-	display: block;
-	width: 261px;
-	height: 52px;
-	margin: 0 auto;
+	padding: 20px 45px;
+}
+
+.pets__btn-link {
+	padding: 10px 45px;
 }
 
 /* Help */
