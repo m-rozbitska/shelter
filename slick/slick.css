@@ -1,3 +1,4 @@
+/* Slider */
 .slick-slider
 {
     position: relative;
@@ -52,8 +53,8 @@
     position: relative;
     top: 0;
     left: 0;
-    display: flex;
-    gap: 40px;
+
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
