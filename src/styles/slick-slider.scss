@@ -1,3 +1,14 @@
-.slick-dots li.slick-active button {
-	color: green;
+#slick-slide00 {
+	content: url(/src/images/arrow-disable.svg);
+}
+
+#slick-slide01 {
+	content: url(/src/images/arrow-disable.svg);
+	transform: rotate(-180deg);
+
+
+	&:hover {
+		content: url(/src/images/arrow-active.svg);
+		transform: rotate(0deg);
+	}
 }
