@@ -47,6 +47,7 @@
 .header__inner {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 	@media (max-width: 768px) {
 		
 	}
@@ -217,8 +218,8 @@
 
 .slider__btn {
 	margin: 0px 41px 0px 41px;
-	width: 187px;
-	height: 52px;
+	max-width: 187px;
+	max-height: 52px;
 	padding: 15px 45px;
 	gap: 10px;
 	color: $accordionBtn;
@@ -296,8 +297,8 @@
 	line-height: 23px;
 	background: $BtnBg;
 	border-radius: 9px;
-	width: 349px;
-	height: 43px;
+	max-width: 349px;
+	max-height: 43px;
 	padding: 10px 15px;
 	gap: 10px;
 	color: $donationBg;
