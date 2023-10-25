@@ -37,10 +37,13 @@
 /*Header*/
 
 .header {
-	padding: 30px 0px 90px 0px;
-	background: $headerBg;
+	padding-top: 30px;
+	// background: $headerBg;
+	background: url(/src/images/start-screen-gradient-background.png);
+	background-size: cover;
 	@media (max-width: 768px) {
-		padding: 46px 0px 61px 0px;
+		background: url(/src/images/start-screen-gradient-backgroundtablet.png);
+		background-size: cover;
 	}
 }
 
@@ -49,7 +52,7 @@
 	justify-content: space-between;
 	width: 100%;
 	@media (max-width: 768px) {
-		
+		padding: 46px 0px 61px 0px;
 	}
 }
 
@@ -61,10 +64,19 @@
 	cursor: pointer;
 }
 
+.menu {
+	display: flex;
+	justify-content: center;
+	width: 42%;
+	max-width: 486px;
+}
+
 .menu__list {
 	display: flex;
 	align-items: center;
-	gap: 35px;
+	justify-content: space-between;
+	width: 100%;
+	// gap: 35px;
 	&-link {
 		font-size: 15px;
 		line-height: 24px;
@@ -80,11 +92,17 @@
 /*Welcome*/
 
 .welcome {
-	background-color: $bgWelcome;
+	background: url(/src/images/start-screen-gradient-background.png);
+	background-size: cover;
+	@media (max-width: 768px) {
+		background: url(/src/images/start-screen-gradient-backgroundtablet.png);
+		background-size: cover;
+	}
 }
 
 
 .welcome__inner {
+	padding-top: 90px;
 	display: flex;
 	gap: 42px;
 	@media(max-width: 768px) {
@@ -155,17 +173,19 @@
 		padding: 80px 165px 100px 166px;
 	}
 }
-.about__img {
-	flex-basis: 300px;
-	padding: 0px 175px 0px 120px;
-	@media(max-width: 768px) {
-		padding: 0px;
-		margin: 0 auto;
-	}
-}
+// .about__img {
+// 	flex-basis: 300px;
+// 	padding: 0px 175px 0px 120px;
+// 	@media(max-width: 768px) {
+// 		padding: 0px;
+// 		margin: 0 auto;
+// 	}
+// }
 
 .about__inner {
 	display: flex;
+	gap: 120px;
+	justify-content: center;
 	@media (max-width: 768px) {
 		flex-direction: column-reverse;
 		gap: 80px;
@@ -192,10 +212,23 @@
 }
 
 .slider {
+	min-width: 0;
 	padding: 60px 0px 60px 0px;
 	display: flex;
-	justify-content: space-between;
+	gap: 105px;
+	// &.slick-track {
+	// 	display: flex;
+	// }
 }
+
+
+// .slider__item {
+// 	padding: 26px 0px 30px 0px;
+// 	max-height: 435px;
+// 	background: $accordionItemBg;
+// 	border-radius: 9px;
+// 	cursor: pointer;
+// }
 
 .slider__item {
 	padding: 26px 0px 30px 0px;
@@ -203,6 +236,10 @@
 	background: $accordionItemBg;
 	border-radius: 9px;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .slider__descr {
@@ -217,7 +254,7 @@
 
 
 .slider__btn {
-	margin: 0px 41px 0px 41px;
+	// margin: 0px 41px 0px 41px;
 	max-width: 187px;
 	max-height: 52px;
 	padding: 15px 45px;

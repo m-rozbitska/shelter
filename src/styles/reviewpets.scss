@@ -22,12 +22,13 @@
 }
 
 .slider__pets {
+	min-width: 0;
 	padding: 60px 0px 60px 0px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 40px;
-	&.slick-arrow {
-		position: absolute;
-	}
+	// &.slick-arrow {
+	// 	position: absolute;
+	// }
 }
 
