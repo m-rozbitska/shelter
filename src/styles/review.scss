@@ -8,7 +8,12 @@
 	line-height: 45px;
 	letter-spacing: 0.06em;
 	color: $title;
-
+	@media (max-width: 320px) {
+		text-align: center;
+		font-size: 25px;
+		line-height: 130%; 
+		letter-spacing: 1.5px;
+	}
 }
 
 .text {
@@ -41,6 +46,10 @@
 	// background: $headerBg;
 	background: url(/src/images/start-screen-gradient-background.png);
 	background-size: cover;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
 	@media (max-width: 768px) {
 		background: url(/src/images/start-screen-gradient-backgroundtablet.png);
 		background-size: cover;
@@ -50,6 +59,7 @@
 .header__inner {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 	@media (max-width: 768px) {
 		padding: 46px 0px 61px 0px;
@@ -65,19 +75,60 @@
 }
 
 .menu {
-	display: flex;
-	justify-content: center;
-	width: 42%;
-	max-width: 486px;
-}
+	&__icon {
+		display: block;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 5;
+		cursor: pointer;
+		span {
+			position: absolute;
+			top: calc(50% - 1px);
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: $BtnBg;
+			&:first-child {
+				top: 0;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0;
+				
+			}
+		}
+	}
 
-.menu__list {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	// gap: 35px;
-	&-link {
+	&__body {
+		@media (max-width: 768px) {
+			position: absolute;
+			top: 0;
+			left: -100%;
+			height: 100vh;
+			width: 100%;
+			background: $burgerMenuBg;
+			display: flex;
+			transition: all .2s;
+		}
+		&.active {
+			left: 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		gap: 35px;
+		@media (max-width: 768px) {
+			flex-direction: column;
+			gap: 0;
+			margin: auto;
+		}
+	}
+	&__link {
 		font-size: 15px;
 		line-height: 24px;
 		color: $menuListLink;
@@ -85,9 +136,13 @@
 			text-decoration: underline 3px;
 			color: $menuListLinkHover;
 		}
+		@media (max-width: 768px) {
+			display: block;
+			font-size: 32px;
+			line-height: 90px;
+		}
 	}
 }
-
 
 /*Welcome*/
 
@@ -122,6 +177,9 @@
 	@media(max-width: 768px) {
 		margin-top: 0px;
 	}
+	@media(max-width: 320px) {
+		
+	}
 }
 
 
@@ -130,6 +188,12 @@
 	font-size: 44px;
 	line-height: 57px;
 	color: $welcomeTitle;
+	@media (max-width: 320px) {
+		text-align: center;
+		font-size: 25px;
+		line-height: 130%; 
+		letter-spacing: 1.5px;
+	}
 }
 
 .welcome__text {
@@ -173,14 +237,11 @@
 		padding: 80px 165px 100px 166px;
 	}
 }
-// .about__img {
-// 	flex-basis: 300px;
-// 	padding: 0px 175px 0px 120px;
-// 	@media(max-width: 768px) {
-// 		padding: 0px;
-// 		margin: 0 auto;
-// 	}
-// }
+.about__img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 .about__inner {
 	display: flex;
@@ -191,7 +252,6 @@
 		gap: 80px;
 	}
 }
-
 
 .about__content {
 	flex-basis: 430px;
@@ -378,7 +438,11 @@
 	justify-content: space-between;
 	@media (max-width: 768px) {
 	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	// flex-direction: column;
+	// justify-content: center;
 	}
 }
 
@@ -446,6 +510,9 @@
 	display: flex;
 	gap: 40px;
 	flex-direction: column;
+	@media(max-width: 768px) {
+		padding-top: 20px;
+	}
 }
 
 .footer__location-wrapper {
