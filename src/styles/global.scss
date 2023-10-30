@@ -109,9 +109,15 @@ body {
 	// }
 }
 
+@media (max-width: 768px) {
+	.pets__container {
+		padding: 0px 30px;
+	}
+}
+
 @media (max-width: 320px) {
 	.footer__container {
-		padding: 0px 21px;
+		padding: 0px 10px 0px 10px;
 	}
 }
 
