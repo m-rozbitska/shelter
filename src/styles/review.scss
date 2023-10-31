@@ -54,6 +54,7 @@
 	align-items: center;
 	position: relative;
 	@media (max-width: 768px) {
+		padding-top: 0px;
 		background: url(/src/images/start-screen-gradient-backgroundtablet.png);
 		background-size: cover;
 	}
@@ -78,6 +79,7 @@
 }
 
 .menu {
+	@media (max-width: 768px) {
 	&__icon {
 		display: block;
 		width: 30px;
@@ -99,6 +101,7 @@
 				top: auto;
 				bottom: 0;
 				
+			}
 			}
 		}
 	}
@@ -301,6 +304,10 @@
 	// 	align-items: center;
 	// 	flex-direction: column;
 	// }
+	@media (max-width: 768px) {
+		max-width: 630px;
+		justify-content: center;
+	}
 	&.slick-initialized .slick-slide
 	{
 		display: flex;
@@ -551,8 +558,12 @@
 .footer__img {
 	max-width: 100%;
 	width: 100%;
+	@media (max-width: 768px) {
+		padding-top: 65px;
+	}
 	@media (max-width: 320px) {
 		max-width: 260px;
+		padding-top: 45px;
 	}
 }
 
