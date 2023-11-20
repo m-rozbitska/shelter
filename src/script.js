@@ -1,3 +1,12 @@
+import katrineImg from './images/pets-katrine.png';
+import jenniferImg from './images/pets-jennifer.png';
+import sophiaImg from './images/pets-sophia.png';
+import woodyImg from './images/pets-woody.png';
+import scarletImg from './images/pets-scarlet.png';
+import timmyImg from './images/pets-timmy.png';
+import freddieImg from './images/pets-freddie.png';
+import charlyImg from './images/pets-charly.png';
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	const menu = document.querySelector('.menu__body');
@@ -19,41 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				body.classList.remove('lock');
 			});
 		});
-		
-	$('.slider__pets').slick({
-		dots: true,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 4,
-		slidesToScroll: 3,
-		adaptiveHeight: true,
-		variableWidth: true,
-		responsive: [
-		  {
-			 breakpoint: 1024,
-			 settings: {
-				slidesToShow: 3,
-				slidesToScroll: 3,
-				infinite: true,
-				dots: true
-			 }
-		  },
-		  {
-			 breakpoint: 768,
-			 settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
-			 }
-		  },
-		  {
-			 breakpoint: 320,
-			 settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			 }
-		  }
-		]
-	 });
 
 	 $('.slider').slick({
 		dots: true,
@@ -63,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		slidesToScroll: 3,
 		adaptiveHeight: true,
 		variableWidth: true,
-	
 		responsive: [
 		  {
 			 breakpoint: 1024,
@@ -91,3 +64,148 @@ document.addEventListener('DOMContentLoaded', () => {
 		]
 	 });
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+	const openModalLinks = document.querySelectorAll('.slider__btn');
+
+	openModalLinks.forEach(link => {
+		 link.addEventListener('click', function (e) {
+			  e.preventDefault();
+			  const dataIndex = this.getAttribute('data-index');
+			  loadData(dataIndex);
+			  openModal();
+		 });
+	});
+
+	
+
+	const petsData = {
+		"img": katrineImg,
+		"name": "Katrine",
+		"type": "Cat",
+		"breed": "British Shorthair",
+		"age": "6 month",
+		"description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
+	};
+
+	const jenniferData = {
+		"img": jenniferImg,
+		"name": "Jennifer",
+		"type": "Dog",
+		"breed": "Labrador",
+		"description": "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
+		"age": "2 months",
+	};
+	
+	const sophiaData = {
+		"img": sophiaImg,
+		"name": "Sophia",
+		"type": "Dog",
+		"breed": "Shih tzu",
+		"description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
+		"age": "1 month",
+	 };
+	
+	 const woodyData = {
+		"img": woodyImg,
+		"name": "Woody",
+		"type": "Dog",
+		"breed": "Golden Retriever",
+		"description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
+		"age": "3 years 6 months",
+	 };
+	
+	 const scarlettData = {
+		"img": scarletImg,
+		"name": "Scarlett",
+		"type": "Dog",
+		"breed": "Jack Russell Terrier",
+		"description": "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
+		"age": "3 months",
+	 };
+	
+	 const timmyData = {
+		"img": timmyImg,
+		"name": "Timmy",
+		"type": "Cat",
+		"breed": "British Shorthair",
+		"description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
+		"age": "2 years 3 months",
+	 };
+	 
+	 const freddieData = {
+		"img": freddieImg,
+		"name": "Freddie",
+		"type": "Cat",
+		"breed": "British Shorthair",
+		"description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
+		"age": "2 months",
+	 };
+	
+	 const charlyData = {
+		"img": charlyImg,
+		"name": "Charly",
+		"type": "Dog",
+		"breed": "Jack Russell Terrier",
+		"description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+		"age": "8 years",
+	 };
+
+	function loadData(index) {
+		 const data = getDataByIndex(index);
+
+		 const modalImg = document.querySelector('#modalImg');
+		 const modalTitle = document.querySelector('#modalTitle');
+		 const modalType = document.querySelector('#modalType');
+		 const modalBreed = document.querySelector('#modalBreed');
+		 const modalAge = document.querySelector('#modalAge');
+		 const modalDescr = document.querySelector('#modalDescr');
+
+		 modalImg.src = data.img;
+		 modalTitle.innerText = data.name;
+		 modalType.innerText = data.type;
+		 modalBreed.innerText = data.breed;
+		 modalAge.innerText = data.age;
+		 modalDescr.innerText = data.description;
+	}
+
+	function getDataByIndex(index) {
+		 const dataObjects = [
+			  petsData,
+			  jenniferData,
+			  woodyData,
+			  sophiaData,
+			  timmyData,
+			  charlyData,
+			  scarlettData,
+			  freddieData
+		 ];
+
+		 if (index >= 0 && index < dataObjects.length) {
+			  return dataObjects[index];
+		 } else {
+			  return {};
+		 }
+	}
+
+	function openModal() {
+		 const modal = document.getElementById('modal');
+		 modal.style.display = 'flex';
+	}
+
+	const closeModalBtn = document.querySelector('#closeBtnModal');
+	const modal = document.querySelector('#modal');
+
+	closeModalBtn.addEventListener('click', closeModal);
+	modal.addEventListener('click', outsideClick);
+
+	function closeModal() {
+		 modal.style.display = 'none';
+	}
+
+	function outsideClick(e) {
+		 if (e.target === modal) {
+			  closeModal();
+		 }
+	}
+});
