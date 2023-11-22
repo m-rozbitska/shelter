@@ -209,3 +209,109 @@ document.addEventListener('DOMContentLoaded', function () {
 		 }
 	}
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	const sliderContainer = document.querySelector('.slider__pets');
+	const itemsPerPage = 3; // Кількість елементів на сторінці
+	let currentPage = 1;
+ 
+	const totalItems = sliderContainer.querySelectorAll('.slider__item').length;
+	const totalPages = Math.ceil(totalItems / itemsPerPage);
+ 
+	// Оновлення стану пагінації
+	function updatePagination() {
+	  const paginationBtns = document.querySelectorAll('.pagination__btn');
+	  paginationBtns.forEach((btn, index) => {
+		 if (index === 2) {
+			btn.textContent = currentPage;
+		 } else if (index === 0) {
+			btn.disabled = currentPage === 1;
+		 } else if (index === 1) {
+			btn.disabled = currentPage === 1;
+		 } else if (index === 3) {
+			btn.disabled = currentPage === totalPages;
+		 } else if (index === 4) {
+			btn.disabled = currentPage === totalPages;
+		 }
+	  });
+	}
+ 
+	// Перехід до вказаної сторінки
+	function goToPage(page) {
+	  currentPage = page;
+	  const startIndex = (currentPage - 1) * itemsPerPage;
+	  const endIndex = startIndex + itemsPerPage;
+ 
+	  const items = sliderContainer.querySelectorAll('.slider__item');
+	  items.forEach((item, index) => {
+		 item.style.display = index >= startIndex && index < endIndex ? 'flex' : 'none';
+	  });
+ 
+	  updatePagination();
+	}
+ 
+	// Обробка кліку на кнопку пагінації
+	function handlePaginationClick(e) {
+	  const action = e.target.dataset.action;
+ 
+	  if (action === 'prev' && currentPage > 1) {
+		 goToPage(currentPage - 1);
+	  } else if (action === 'next' && currentPage < totalPages) {
+		 goToPage(currentPage + 1);
+	  } else if (action === 'first') {
+		 goToPage(1);
+	  } else if (action === 'last') {
+		 goToPage(totalPages);
+	  }
+	}
+ 
+	// Створення елементів пагінації
+	function createPagination() {
+	  const paginationContainer = document.createElement('div');
+	  paginationContainer.classList.add('btns__container');
+ 
+	  const prevBtn = document.createElement('button');
+	  prevBtn.classList.add('pagination__btn');
+	  prevBtn.innerHTML = '<img src="/src/images/arrow-disable.svg" alt="">';
+	  prevBtn.addEventListener('click', handlePaginationClick);
+	  prevBtn.dataset.action = 'prev';
+ 
+	  const firstBtn = document.createElement('button');
+	  firstBtn.classList.add('pagination__btn');
+	  firstBtn.textContent = '<<';
+	  firstBtn.addEventListener('click', handlePaginationClick);
+	  firstBtn.dataset.action = 'first';
+ 
+	  const currentPageBtn = document.createElement('button');
+	  currentPageBtn.classList.add('pagination__btn', 'current-page');
+	  currentPageBtn.textContent = currentPage;
+ 
+	  const lastBtn = document.createElement('button');
+	  lastBtn.classList.add('pagination__btn');
+	  lastBtn.textContent = '>>';
+	  lastBtn.addEventListener('click', handlePaginationClick);
+	  lastBtn.dataset.action = 'last';
+ 
+	  const nextBtn = document.createElement('button');
+	  nextBtn.classList.add('pagination__btn');
+	  nextBtn.innerHTML = '<img src="./src/images/arrow-active.svg" alt="">';
+	  nextBtn.addEventListener('click', handlePaginationClick);
+	  nextBtn.dataset.action = 'next';
+ 
+	  paginationContainer.appendChild(prevBtn);
+	  paginationContainer.appendChild(firstBtn);
+	  paginationContainer.appendChild(currentPageBtn);
+	  paginationContainer.appendChild(lastBtn);
+	  paginationContainer.appendChild(nextBtn);
+ 
+	  return paginationContainer;
+	}
+ 
+	// Додавання пагінації до сторінки
+	const pagination = createPagination();
+	sliderContainer.appendChild(pagination);
+ 
+	// Початкове завантаження першої сторінки
+	goToPage(currentPage);
+ });
+ 
