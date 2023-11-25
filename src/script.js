@@ -6,6 +6,7 @@ import scarletImg from './images/pets-scarlet.png';
 import timmyImg from './images/pets-timmy.png';
 import freddieImg from './images/pets-freddie.png';
 import charlyImg from './images/pets-charly.png';
+import paginationDisable from './images/paginator-inactive.svg';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -212,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const sliderContainer = document.querySelector('.slider__pets');
-	const itemsPerPage = 3; // Кількість елементів на сторінці
+	const itemsPerPage = 8; // Кількість елементів на сторінці
 	let currentPage = 1;
  
 	const totalItems = sliderContainer.querySelectorAll('.slider__item').length;
@@ -272,13 +273,15 @@ document.addEventListener('DOMContentLoaded', function () {
  
 	  const prevBtn = document.createElement('button');
 	  prevBtn.classList.add('pagination__btn');
-	  prevBtn.innerHTML = '<img src="/src/images/arrow-disable.svg" alt="">';
+	  prevBtn.textContent = '<<';
+	   //привязати js code (logic) до кнопок, що зверстані в html
+		// document.querySelector()
 	  prevBtn.addEventListener('click', handlePaginationClick);
 	  prevBtn.dataset.action = 'prev';
- 
+
 	  const firstBtn = document.createElement('button');
 	  firstBtn.classList.add('pagination__btn');
-	  firstBtn.textContent = '<<';
+	  firstBtn.textContent = '<';
 	  firstBtn.addEventListener('click', handlePaginationClick);
 	  firstBtn.dataset.action = 'first';
  
@@ -288,13 +291,13 @@ document.addEventListener('DOMContentLoaded', function () {
  
 	  const lastBtn = document.createElement('button');
 	  lastBtn.classList.add('pagination__btn');
-	  lastBtn.textContent = '>>';
+	  lastBtn.textContent = '>';
 	  lastBtn.addEventListener('click', handlePaginationClick);
 	  lastBtn.dataset.action = 'last';
  
 	  const nextBtn = document.createElement('button');
 	  nextBtn.classList.add('pagination__btn');
-	  nextBtn.innerHTML = '<img src="./src/images/arrow-active.svg" alt="">';
+	  nextBtn.textContent = '>>';
 	  nextBtn.addEventListener('click', handlePaginationClick);
 	  nextBtn.dataset.action = 'next';
  

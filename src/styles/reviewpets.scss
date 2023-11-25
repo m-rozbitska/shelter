@@ -77,6 +77,9 @@
 	align-items: center;
 	gap: 20px;
 	margin: 0 auto;
+	@media(max-width: 320px) {
+		gap: 10px;
+	}
 }
 
 .pagination__btn {
@@ -94,6 +97,10 @@
 	&:hover {
 		background-color: $btnPaginationActive;
 		transition: all .2s linear;
+	}
+	@media(max-width: 320px) {
+		width: 42px;
+		height: 42px;
 	}
 }
 
