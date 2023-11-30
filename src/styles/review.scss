@@ -1,7 +1,7 @@
 .section {
 	padding: 80px 0px 100px 0px;
 	@media (max-width: 320px) {
-		padding: 42px 0px;
+		padding: 42px 10px;
 	}
 }
 
@@ -42,11 +42,9 @@
 	line-height: 22px;
 	}
 
-/*Header*/
 
 .header {
 	padding-top: 30px;
-	// background: $headerBg;
 	background: url(/src/images/start-screen-gradient-background.png);
 	background-size: cover;
 	display: flex;
@@ -148,14 +146,13 @@
 			color: $menuListLinkHover;
 		}
 		@media (max-width: 768px) {
+			color: $menuListLinkHover;
 			display: block;
 			font-size: 32px;
 			line-height: 90px;
 		}
 	}
 }
-
-/*Welcome*/
 
 .welcome {
 	background: url(/src/images/start-screen-gradient-background.png);
@@ -239,15 +236,6 @@
 	}
 }
 
-	// .welcome__btn {
-	// 	@media (max-width: 768px) {
-	// 		justify-content: center;
-	// 		align-items: center;
-	// 	}
-	// }
-
-
-/*About*/
 
 .about {
 	@media (max-width: 768px) {
@@ -288,7 +276,6 @@
 	}
 }
 
-/*Pets*/
 
 .pets {
 	background: $petsBg;
@@ -298,29 +285,16 @@
 	text-align: center;
 }
 
-// .slider__wrapper {
-// 	position: relative;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	width: 100%;
-// 	height: 100vh;
-// }
 
 .slider {
 	min-width: 0;
 	padding: 60px 0px 60px 0px;
 	display: flex;
 	gap: 105px;
-	// &.slick-track {
-	// 	display: flex;
-	// 	justify-content: center;
-	// 	align-items: center;
-	// 	flex-direction: column;
-	// }
 	@media (max-width: 768px) {
-		max-width: 630px;
-		justify-content: center;
+		max-width: 600px;
+		display: block;
+		margin: 0 auto;
 	}
 	&.slick-initialized .slick-slide
 	{
@@ -334,8 +308,6 @@
 }
 
 .slider__item {
-	// z-index: 1;
-	// position: relative;
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
@@ -345,10 +317,6 @@
 	background: $accordionItemBg;
 	border-radius: 9px;
 	cursor: pointer;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-	// flex-direction: column;
 }
 
 
@@ -400,9 +368,7 @@
 	padding: 10px 45px;
 }
 
-/*Modal*/
- 
- .modal {
+.modal {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -412,9 +378,9 @@
 	background-color: rgba(0, 0, 0, 0.7);
 	justify-content: center;
 	align-items: center;
- }
- 
- .modal-content {
+}
+
+.modal-content {
 	cursor: pointer;
 	background-color: #fafafa;
 	padding: 20px;
@@ -423,9 +389,9 @@
 	border-radius: 8px;
 	text-align: center;
 	margin: 0 20px;
- }
- 
- .close {
+}
+
+.close {
 	font-size: 30px; 
 	cursor: pointer;
 	border: 2px solid $menuListLinkHover;
@@ -484,8 +450,6 @@
 	letter-spacing: 0.9px;
 }
 
-/* Help */
-
 .help__title {
 	text-align: center;
 }
@@ -530,8 +494,6 @@
 		letter-spacing: 0.9px;
 	}
 }
-
-/* Donation */
 
 .donation {
 	background: $donationBg;
@@ -608,8 +570,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// flex-direction: column;
-	// justify-content: center;
 	}
 	@media (max-width: 768px) {
 		padding-top: 30px;
@@ -622,9 +582,6 @@
 .footer__element {
 	width: 300px;
 }
-// .footer__element {
-// 	flex: 0 1 33.333%;
-// }
 
 .footer__title {
 	font-family: 'Georgia';
@@ -711,3 +668,10 @@
 	flex-direction: column;
 }
 
+.contacts__item {
+	cursor: pointer;
+}
+
+.location__item {
+	cursor: pointer;
+}

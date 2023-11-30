@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./src/images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./slick/slick.scss">
    <link rel="stylesheet" href="./slick/slick-theme.scss">
 	<link rel="stylesheet" href="./src/styles/styles.scss">
@@ -13,7 +14,7 @@
 	<header class="header__header">
 		<div class="container pets__container">
 			<div class="header__inner header__inner-pets">
-				<a class="header__logo">
+				<a href="index.html" class="header__logo">
 					<img src="./src/images/Title.svg" alt="logo" class="logo__img">
 					<p class="text header__text header__text-pets">Shelter for pets in Boston</p>
 				</a>
@@ -26,13 +27,13 @@
 					<nav class="menu__body menu__body-pets">
 						<ul class=" menu__list menu__listpets">
 							<li class="menu__item menu__list-item">
-								<a href="#About" class="menu__link menu__listpets-linkpets">About us</a>
+								<a href="index.html" class="menu__link menu__listpets-linkpets">About us</a>
 							</li>
 							<li class="menu__item menu__list-item">
-								<a href="#Pets" class="menu__link menu__listpets-linkpets">Our pets</a>
+								<a href="index pets.html" class="menu__link menu__listpets-linkpets">Our pets</a>
 							</li>
 							<li class="menu__item menu__list-item">
-								<a href="#Help" class="menu__link menu__listpets-linkpets">Help us</a>
+								<a href="index.html#Help" class="menu__link menu__listpets-linkpets">Help us</a>
 							</li>
 							<li class="menu__item menu__list-item">
 								<a href="#Contacts" class="menu__link menu__listpets-linkpets">Contacts</a>
@@ -44,7 +45,7 @@
 		</div>
 	</header>
 	<main>
-		<section id="Pets" class="section pets">
+		<section class="section pets">
 			<div class="container">
 				<h2 class="title pets__title">Our friends who <br>
 					are looking for a house</h2>
@@ -295,41 +296,45 @@
 			 </div>
 		</div>
 	</main>
-	<footer id="Contacts" class="footer">
+	<footer id="Contacts" class="footer" id="footer">
 		<div class="container footer__container">
-			<div class="footer__wrapper footer__wrapper-pets">
-				<div class="footer__element footer__questions">
-					<h3 class="footer__title questions__title">For questions and suggestions</h3>
-					<div class="footer__info questions__email">
-						<div class="email__icon">
-							<img src="./src/images/icon-email.svg" alt="">
+			<div class="footer__wrapper">
+				<div class="footer__contacts">
+					<div class="footer__title title">For questions and suggestions</div>
+					<div class="footer__contacts-wrapper">
+						<div class="contacts__item footer__item">
+							<div class="contacts__icon">
+								<img src="./src/images/icon-email.svg" alt="">
+							</div>
+							<a href="#" class="contacts__link footer__text">email@shelter.com</a>
 						</div>
-						<a href="#" class="footer__descr email__descr">email@shelter.com</a>
-					</div>
-					<div class="footer__info questions__phone">
-						<div class="phone__icon">
-							<img src="./src/images/icon-phone.svg" alt="">	
+						<div class="contacts__item footer__item phone__item">
+							<div class="contacts__icon">
+								<img src="./src/images/icon-phone.svg" alt="">
+							</div>
+							<a href="tel:+380934993516" class="contacts__link phone__link footer__text">+13 674 567 75 54</a>
 						</div>
-						<a href="#" class="footer__descr phone__descr">+13 674 567 75 54</a>
-					</div>
-				</div>
-				<div class="footer__element footer__visit">
-					<h3 class="footer__title visit__title">We are waiting for your visit</h3>
-					<div class="footer__info visit__location">
-						<div class="location__icon">
-							<img src="./src/images/icon-marker.svg" alt="">
-						</div>
-						<p class="footer__descr location__descr">1 Central Street, Boston (entrance from the store)</p>
-					</div>
-					<div class="footer__info visit__location">
-						<div class="location__icon">
-							<img src="./src/images/icon-marker.svg" alt="">
-						</div>
-						<p class="footer__descr location__descr">18 South Park, London </p>
 					</div>
 				</div>
-				<div class="footer__element footer__image">
-					<img src="./src/images/footer-puppy.png" alt="">
+				<div class="footer__location">
+					<div class="footer__title title">We are waiting for your visit</div>
+					<div class="footer__location-wrapper">
+						<div class="location__item footer__item">
+							<div class="location__icon">
+								<img src="./src/images/icon-marker.svg" alt="">
+							</div>
+							<p class="location__text footer__text">1 Central Street, Boston (entrance from the store)</p>
+						</div>
+						<div class="location__item footer__item">
+							<div class="location__icon">
+								<img src="./src/images/icon-marker.svg" alt="">
+							</div>
+							<p class="location__text location__text-second footer__text">18 South Park, London</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer__media">
+					<img class="footer__img" src="./src/images/footer-puppy.png" alt="">
 				</div>
 			</div>
 		</div>
