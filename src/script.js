@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const totalItems = sliderContainer.querySelectorAll('.slider__item').length;
 	const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-	// Оновлення стану пагінації
 	function updatePagination() {
 	const paginationBtns = document.querySelectorAll('.pagination__btn');
 	paginationBtns.forEach((btn, index) => {
@@ -236,7 +235,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	}
 
-	// Перехід до вказаної сторінки
 	function goToPage(page) {
 	currentPage = page;
 	const startIndex = (currentPage - 1) * itemsPerPage;
@@ -250,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	updatePagination();
 	}
 
-	// Обробка кліку на кнопку пагінації
 	function handlePaginationClick(e) {
 		const action = e.target.dataset.action;
 
@@ -265,7 +262,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// Створення елементів пагінації
 	function createPagination() {
 	const paginationContainer = document.createElement('div');
 	paginationContainer.classList.add('btns__container');
@@ -273,8 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const prevBtn = document.createElement('button');
 	prevBtn.classList.add('pagination__btn');
 	prevBtn.textContent = '<';
-	   //привязати js code (logic) до кнопок, що зверстані в html
-		// document.querySelector()
 	prevBtn.addEventListener('click', handlePaginationClick);
 	prevBtn.dataset.action = 'prev';
 
@@ -309,11 +303,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	return paginationContainer;
 	}
 
-	// Додавання пагінації до сторінки
 	const pagination = createPagination();
 	sliderContainer.appendChild(pagination);
 
-	// Початкове завантаження першої сторінки
 	goToPage(currentPage);
 });
 
@@ -324,8 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const phoneIcon = document.querySelector('.phone__item .contacts__icon img');
 	const locationLink = document.querySelector('.location__text');
 	const locationLinkSecond = document.querySelector('.location__text-second');
- 
-	// Додайте обробники подій для email
+
 	emailLink.addEventListener('click', function (event) {
 	  event.preventDefault();
 	  window.open('mailto:melissa180lily@gmail.com', '_blank');
@@ -335,60 +326,18 @@ document.addEventListener('DOMContentLoaded', function () {
 	  window.open('mailto:melissa180lily@gmail.com', '_blank');
 	});
 
+	phoneLink.addEventListener('click', dialPhoneNumber);
+	phoneIcon.addEventListener('click', dialPhoneNumber);
 
+	function dialPhoneNumber(event) {
+		event.preventDefault();
+		window.location.href = phoneLink.getAttribute('href');
+	}
 
-  
-		// Додайте обробники подій для посилання та картинки
-		phoneLink.addEventListener('click', dialPhoneNumber);
-		phoneIcon.addEventListener('click', dialPhoneNumber);
-  
-		// Функція для відкриття набору номера
-		// function dialPhoneNumber(event) {
-		// 	 event.preventDefault();
-  
-		// 	 // Отримайте номер телефону з атрибута href
-		// 	 const phoneNumber = phoneLink.getAttribute('href');
-  
-		// 	 // Відкрийте набір номера
-		// 	 window.open('tel:' + phoneNumber, '_blank');
-		// }
-	   function dialPhoneNumber(event) {
-			event.preventDefault();
-			// Відкрийте панель набору номера
-			window.location.href = phoneLink.getAttribute('href');
-	  }
-  
- 
-
-	// phoneLink.addEventListener('click', function (event) {
-	//   event.preventDefault();
-	//   window.location.href = 'tel:+380934993516';
-	// });
-
-// 	phoneLink.addEventListener('click', function (event) {
-// 		event.preventDefault();
-		
-// 		// Отримайте номер телефону з атрибута href
-// 		const phoneNumber = phoneLink.getAttribute('href');
-
-// 		// Відкрийте набір номера
-// 		window.location.href = phoneNumber;
-//   });
-
-// 	phoneLink.addEventListener('click', function (event) {
-// 		event.preventDefault();
-// 		makePhoneCall('+380934993516');
-//   });
-
-//   function makePhoneCall(phoneNumber) {
-// 		window.location.href = 'tel:' + phoneNumber;
-//   }
- 
 	phoneIcon.addEventListener('click', function () {
 	  window.location.href = 'tel:+380934993516';
 	});
  
-	// Додайте обробник подій для локації
 	locationLink.addEventListener('click', function (event) {
 	  event.preventDefault();
 	  window.open('https://www.google.com/maps/place/1+Central+Street+Boston', '_blank');
@@ -399,4 +348,4 @@ document.addEventListener('DOMContentLoaded', function () {
 		window.open('https://www.google.com/maps/@51.4424571,0.0009427,17z?entry=ttu', '_blank');
 	 });
  });
- 
+
