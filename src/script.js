@@ -77,8 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
-	
-
 	const petsData = {
 		"img": katrineImg,
 		"name": "Katrine",
@@ -212,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const sliderContainer = document.querySelector('.slider__pets');
-	const itemsPerPage = 8; // Кількість елементів на сторінці
+	const itemsPerPage = 8; 
 	let currentPage = 1;
 
 	const totalItems = sliderContainer.querySelectorAll('.slider__item').length;
