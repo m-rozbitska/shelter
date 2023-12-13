@@ -100,7 +100,7 @@ $slick-opacity-not-active: 0.25 !default;
         font-family: $slick-font-family;
         font-size: 20px;
         line-height: 1;
-        color: #06038d; //--------------------------------колір кнопки
+        color: #F1CDB3; //--------------------------------колір кнопки
         opacity: $slick-opacity-default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -124,6 +124,20 @@ $slick-opacity-not-active: 0.25 !default;
     }
 }
 
+@media(max-width: 768px) {
+    .slick-prev {
+       left: -25px;
+    }
+}
+
+@media(max-width: 380px) {
+    .slick-prev {
+        top: auto;
+        bottom: 15px;
+        left: 65px;
+    }
+}
+ 
 .slick-next {
     right: -25px;
 
@@ -138,6 +152,14 @@ $slick-opacity-not-active: 0.25 !default;
         [dir="rtl"] & {
             content: $slick-prev-character;
         }
+    }
+}
+
+@media(max-width: 380px) {
+    .slick-next {
+        top: auto;
+        bottom: 15px;
+        right: 65px;
     }
 }
 
